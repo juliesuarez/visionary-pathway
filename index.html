@@ -421,6 +421,12 @@
         }
         .testimonial cite { font-style: normal; font-weight: 700; display: block; }
         .testimonial small { color: var(--text-light); }
+        .testimonial.story { grid-column: span 2; max-width: none; }
+        .testimonial.story::before { content: none; }
+        .testimonial.story h3 { font-size: 1.3rem; margin: 0.3rem 0 0.8rem; }
+        .testimonial.story p { color: var(--text-dark); margin-bottom: 0.8rem; }
+        .testimonial.story figcaption { margin-top: 1.2rem; }
+        @media (max-width: 960px) { .testimonial.story { grid-column: auto; } }
         .share-story { text-align: center; margin-top: 2.5rem; color: var(--text-light); }
 
         /* --- MERCH --- */
@@ -878,6 +884,19 @@
                 <p>Real opportunities, real young people.</p>
             </div>
             <div class="testimonials-grid">
+                <figure class="testimonial story">
+                    <span class="project-tag">Rise Her Program</span>
+                    <h3>Meet Nansikombi Shivan: Rising Through Education</h3>
+                    <p>At 20 years old, Nansikombi is a young mother determined to build a better future for herself and her son. Through our Rise Her Program, she received support and encouragement that helped her return to school.</p>
+                    <p>Today she is preparing to sit her Senior Six examinations. Looking ahead, she hopes to join university and pursue a business-related course, so she can start and manage her own business, become financially independent and create a better future for her son.</p>
+                    <figcaption>
+                        <div class="avatar" aria-hidden="true">NS</div>
+                        <div>
+                            <cite>Nansikombi Shivan, 20</cite>
+                            <small>Rise Her Program participant</small>
+                        </div>
+                    </figcaption>
+                </figure>
                 <figure class="testimonial">
                     <blockquote>I got the flyer for the Groundbreaker Talents scholarship through Visionary PathWays.</blockquote>
                     <figcaption>

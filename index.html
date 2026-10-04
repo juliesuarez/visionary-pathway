@@ -3,50 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visionary PathWays - Empowering Futures</title>
+    <title>Visionary PathWays | Youth-led CBO in Kampala, Uganda</title>
+    <meta name="description" content="Visionary PathWays is a youth-led community-based organisation in Kampala, Uganda, empowering young people aged 15–30 through SRHR education, menstrual health and entrepreneurship.">
+    <meta property="og:title" content="Visionary PathWays | Empowering Futures">
+    <meta property="og:description" content="Annual Youth Community Gathering 2026 · 11 December · Kanyogoga, Namuwongo. Partner with us to create a meaningful day for 200 young people.">
+    <meta property="og:image" content="images/web/gathering-flyer.jpg">
+    <meta name="theme-color" content="#3c096c">
+    <link rel="icon" href="images/vision.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         /* --- RESET & VARIABLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
+            --deep-purple: #3c096c;
+            --dark-purple: #5A189A;
             --primary-purple: #7B2CBF;
             --light-purple: #9D4EDD;
-            --dark-purple: #5A189A;
-            --accent-purple: #C77DFF;
+            --lilac: #F3E8FF;
+            --pink: #D6127E;
+            --pink-soft: #FFE3F1;
+            --gold: #FFD23F;
             --white: #FFFFFF;
-            --off-white: #F9FAFB;
-            --text-dark: #1F2937;
-            --text-light: #6B7280;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --radius: 8px;
+            --tint: #FAF7FD;
+            --text-dark: #1F1630;
+            --text-light: #5B536B;
+            --border: #E9E1F3;
+            --shadow-sm: 0 1px 3px rgba(60, 9, 108, 0.08);
+            --shadow-md: 0 10px 30px -12px rgba(60, 9, 108, 0.25);
+            --radius: 16px;
+            --max: 1200px;
         }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
+            line-height: 1.65;
             color: var(--text-dark);
             background-color: var(--white);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        img { max-width: 100%; height: auto; display: block; }
+
+        h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
-            color: var(--dark-purple);
+            color: var(--deep-purple);
             line-height: 1.2;
         }
 
+        a { color: var(--primary-purple); }
+
+        :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+        .skip-link {
+            position: absolute; left: 1rem; top: -100px; z-index: 2000;
+            background: var(--gold); color: var(--deep-purple); padding: 0.6rem 1rem;
+            font-weight: 700; border-radius: 8px; text-decoration: none;
+        }
+        .skip-link:focus { top: 1rem; }
+
+        .container { max-width: var(--max); margin: 0 auto; }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-pink { background: var(--pink); color: var(--white); }
+        .btn-pink:hover { background: #B00E68; }
+        .btn-purple { background: var(--primary-purple); color: var(--white); }
+        .btn-purple:hover { background: var(--dark-purple); }
+        .btn-outline-light { border-color: var(--white); color: var(--white); background: transparent; }
+        .btn-outline-light:hover { background: var(--white); color: var(--deep-purple); }
+        .btn-outline { border-color: var(--primary-purple); color: var(--primary-purple); background: transparent; }
+        .btn-outline:hover { background: var(--primary-purple); color: var(--white); }
+        .btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
         /* --- NAVIGATION --- */
-        nav {
-            background: var(--white);
-            padding: 1rem 0;
+        .site-nav {
+            background: rgba(255, 255, 255, 0.97);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -54,544 +106,683 @@
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: var(--max);
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0.7rem 1rem;
+            gap: 1rem;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-        }
+        .logo-container { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+        .logo-img { height: 46px; width: 46px; border-radius: 50%; }
+        .logo-main { font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--deep-purple); line-height: 1.1; }
+        .logo-tagline { font-size: 0.75rem; color: var(--text-light); }
 
-        .logo-img {
-            height: 50px;
-            width: auto;
-            border-radius: 50%; /* Circular logo */
-        }
+        .nav-links { display: flex; list-style: none; gap: 1.4rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary-purple); }
+        .nav-links .nav-event { color: var(--pink); }
+        .nav-links .nav-event::before { content: '● '; font-size: 0.7em; vertical-align: middle; }
+        .nav-donate-btn { background: var(--pink); color: var(--white) !important; padding: 0.55rem 1.3rem; border-radius: 999px; }
+        .nav-donate-btn:hover { background: #B00E68; }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-purple);
-        }
-
-        .logo-tagline {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-purple);
-        }
-
-        /* Special Styling for Donate Button in Nav */
-        .nav-donate-btn {
-            background-color: var(--primary-purple);
-            color: var(--white) !important;
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            transition: background 0.3s ease;
-        }
-        
-        .nav-donate-btn:hover {
-            background-color: var(--dark-purple);
-            transform: translateY(-2px);
-        }
-
-        .mobile-menu {
+        .menu-toggle {
             display: none;
-            flex-direction: column;
+            background: none;
+            border: 0;
+            padding: 0.6rem;
             cursor: pointer;
         }
+        .menu-toggle span { display: block; width: 24px; height: 3px; background: var(--deep-purple); margin: 4px 0; border-radius: 2px; transition: 0.3s; }
+        .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-purple);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
-            /* REPLACE 'hero-bg.jpg' with a real high-quality image of your beneficiaries */
-            background: linear-gradient(rgba(90, 24, 154, 0.85), rgba(123, 44, 191, 0.8)), url('images/back.jpg') no-repeat center center/cover;
-            background-size: cover;
-            background-position: center;
+            position: relative;
             color: var(--white);
-            padding: 8rem 2rem;
-            text-align: center;
+            background:
+                linear-gradient(100deg, rgba(36, 6, 63, 0.92) 0%, rgba(60, 9, 108, 0.75) 45%, rgba(60, 9, 108, 0.2) 100%),
+                url('images/web/hero.jpg') center / cover no-repeat;
+            padding: 6rem 1rem 0;
         }
 
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .hero-content { max-width: var(--max); margin: 0 auto; padding-bottom: 5rem; }
+        .hero-content > * { max-width: 640px; }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        .btn {
+        .eyebrow {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-primary {
-            background: var(--white);
-            color: var(--primary-purple);
-            border: 2px solid var(--white);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: var(--pink);
             color: var(--white);
+            margin-bottom: 1.2rem;
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            margin-left: 1rem;
-        }
-        .about-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; }
-        .about-text h3 { color: var(--primary-purple); margin-bottom: 1rem; margin-top: 1.5rem; }
-        .about-text ul { margin-left: 1rem; margin-bottom: 1rem; }
-        .about-text li { margin-bottom: 0.5rem; }
-        
-        .values-box { background: var(--off-white); padding: 2rem; border-radius: var(--radius); border-left: 5px solid var(--primary-purple); }
-        .values-list { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
-        .value-tag { background: var(--primary-purple); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+        .hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 800; color: var(--white); margin-bottom: 1.2rem; }
+        .hero h1 .hl { color: var(--gold); }
+        .hero p { font-size: 1.15rem; margin-bottom: 2rem; opacity: 0.95; }
 
-        .btn-secondary:hover {
+        .event-strip {
+            position: relative;
             background: var(--white);
-            color: var(--primary-purple);
+            color: var(--text-dark);
+            max-width: var(--max);
+            margin: 0 auto;
+            border-radius: var(--radius) var(--radius) 0 0;
+            padding: 1.3rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 -10px 30px -10px rgba(0, 0, 0, 0.25);
         }
+        .event-strip strong { font-family: 'Poppins', sans-serif; color: var(--deep-purple); display: block; }
+        .event-strip small { color: var(--text-light); }
+
+        .countdown { display: flex; gap: 0.5rem; }
+        .countdown div {
+            background: var(--lilac);
+            border-radius: 10px;
+            min-width: 62px;
+            text-align: center;
+            padding: 0.4rem 0.5rem;
+        }
+        .countdown b { display: block; font-family: 'Poppins', sans-serif; font-size: 1.4rem; color: var(--deep-purple); line-height: 1.2; }
+        .countdown span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); }
 
         /* --- GLOBAL SECTION STYLES --- */
-        section {
-            padding: 5rem 2rem;
-        }
+        section { padding: 5rem 1rem; }
+        .bg-tint { background: var(--tint); }
 
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        /* Decorative underline similar to Novi */
-        .section-header h2::after {
-            content: '';
+        .section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+        .section-header .kicker {
             display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-purple);
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--pink);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.8rem;
+            margin-bottom: 0.6rem;
         }
+        .section-header h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.8rem; }
+        .section-header p { color: var(--text-light); font-size: 1.08rem; }
 
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        /* --- STATS SECTION --- */
-        .stats {
-            background: var(--off-white);
-            padding: 4rem 2rem;
-        }
-
+        /* --- STATS --- */
+        .stats { padding: 3rem 1rem; }
         .stats-container {
-            max-width: 1200px;
+            max-width: var(--max);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
             text-align: center;
         }
+        .stat-number { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: var(--primary-purple); font-family: 'Poppins', sans-serif; }
+        .stat-label { font-size: 0.85rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-purple);
-            font-family: 'Poppins', sans-serif;
+        /* --- EVENT --- */
+        .event {
+            background: linear-gradient(160deg, var(--deep-purple) 0%, var(--dark-purple) 60%, #7a1574 100%);
+            color: var(--white);
         }
+        .event .section-header h2, .event h3 { color: var(--white); }
+        .event .section-header p { color: rgba(255, 255, 255, 0.85); }
+        .event .section-header .kicker { color: var(--gold); }
 
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* --- PROJECTS SECTION (New) --- */
-        .projects-grid {
-            max-width: 1200px;
+        .event-grid {
+            max-width: var(--max);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            gap: 3rem;
+            align-items: start;
         }
 
+        .flyer { border-radius: var(--radius); box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5); }
+        .flyer-caption { margin-top: 0.8rem; font-size: 0.9rem; }
+        .flyer-caption a { color: var(--gold); font-weight: 600; }
+
+        .event-facts {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        .fact {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 0.9rem 1rem;
+        }
+        .fact span { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); font-weight: 600; }
+        .fact b { font-family: 'Poppins', sans-serif; font-weight: 600; }
+
+        .activities { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin: 1rem 0 2rem; }
+        .activity {
+            background: var(--white);
+            color: var(--text-dark);
+            border-radius: 12px;
+            padding: 1rem 1.1rem;
+        }
+        .activity h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+        .activity p { font-size: 0.9rem; color: var(--text-light); }
+        .activity .icon { font-size: 1.4rem; margin-bottom: 0.3rem; }
+
+        .goal {
+            border-left: 4px solid var(--gold);
+            padding: 0.4rem 0 0.4rem 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .goal p { font-size: 0.95rem; opacity: 0.9; }
+        .goal ul { list-style: none; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1rem; }
+        .goal li::before { content: '✓ '; color: var(--gold); }
+
+        .partner-box {
+            max-width: var(--max);
+            margin: 3.5rem auto 0;
+            background: var(--white);
+            color: var(--text-dark);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 2.5rem;
+        }
+        .partner-box h3 { color: var(--deep-purple); font-size: 1.6rem; margin-bottom: 0.6rem; }
+        .partner-box h4 { font-size: 1rem; margin: 1.2rem 0 0.6rem; }
+        .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+        .chips li {
+            background: var(--lilac);
+            color: var(--deep-purple);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+        }
+        .partner-box .recognition { list-style: none; }
+        .partner-box .recognition li { padding: 0.45rem 0; border-bottom: 1px solid var(--border); }
+        .partner-box .recognition li::before { content: '★ '; color: var(--pink); }
+
+        /* --- ABOUT --- */
+        .about-grid {
+            max-width: var(--max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .about-img { border-radius: var(--radius); box-shadow: var(--shadow-md); width: 100%; }
+        .about-text h3 { color: var(--primary-purple); margin: 1.5rem 0 0.5rem; }
+        .about-text h3:first-child { margin-top: 0; }
+
+        .vm-grid {
+            max-width: var(--max);
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+        .vm-card { background: var(--tint); border-radius: var(--radius); padding: 1.8rem; border-top: 4px solid var(--primary-purple); }
+        .vm-card:nth-child(2) { border-top-color: var(--pink); }
+        .vm-card:nth-child(3) { border-top-color: var(--gold); }
+        .vm-card h3 { margin-bottom: 0.6rem; font-size: 1.2rem; }
+        .values-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .value-tag { background: var(--primary-purple); color: var(--white); padding: 0.3rem 0.85rem; border-radius: 999px; font-weight: 600; font-size: 0.85rem; }
+
+        /* --- PROGRAMS --- */
+        .projects-grid {
+            max-width: var(--max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
         .project-card {
             background: var(--white);
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow-md);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-img { height: 200px; width: 100%; object-fit: cover; }
+        .project-content { padding: 1.4rem; }
+        .project-tag { font-size: 0.75rem; font-weight: 700; color: var(--pink); text-transform: uppercase; letter-spacing: 0.08em; }
+        .project-content h3 { margin: 0.3rem 0 0.5rem; font-size: 1.2rem; }
+        .project-content p { color: var(--text-light); font-size: 0.95rem; }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        /* --- GALLERY SLIDER --- */
+        .slider-wrapper { max-width: 900px; margin: 0 auto; position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: #000; }
+        .slides-container { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; position: relative; margin: 0; }
+        .slide img { width: 100%; height: clamp(260px, 55vw, 500px); object-fit: cover; }
+        .slide figcaption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); color: var(--white); padding: 2.5rem 1rem 1rem; text-align: center; font-weight: 600; }
+
+        .slider-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9); border: none;
+            width: 44px; height: 44px; border-radius: 50%;
+            cursor: pointer; font-size: 1.2rem; color: var(--deep-purple);
         }
+        .slider-btn:hover { background: var(--white); }
+        .prev-btn { left: 12px; }
+        .next-btn { right: 12px; }
+        .slider-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+        .slider-dots button { width: 12px; height: 12px; border-radius: 50%; border: 0; background: var(--border); cursor: pointer; padding: 0; }
+        .slider-dots button[aria-current="true"] { background: var(--primary-purple); width: 28px; border-radius: 999px; }
 
-        .project-img {
-            height: 250px;
-            width: 100%;
-            background-color: #ddd;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark-purple);
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--primary-purple);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* --- TEAM SECTION (New) --- */
-        .team-section {
-            background: var(--off-white);
-        }
-
-        .team-grid {
-            max-width: 1200px;
+        /* --- TESTIMONIALS --- */
+        .testimonials-grid {
+            max-width: var(--max);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
         }
-
-        .team-card {
+        .testimonial {
             background: var(--white);
-            padding: 2rem;
-            text-align: center;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            transition: 0.3s;
-        }
-
-        .team-card:hover {
+            padding: 2.2rem 2rem 1.8rem;
             box-shadow: var(--shadow-md);
+            position: relative;
+            max-width: 560px;
+            margin: 0 auto;
+            width: 100%;
         }
-
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+        .testimonial::before {
+            content: '“';
+            position: absolute; top: -0.4rem; left: 1.4rem;
+            font-family: Georgia, serif; font-size: 5rem; line-height: 1;
+            color: var(--pink);
+        }
+        .testimonial blockquote { font-size: 1.15rem; font-family: 'Poppins', sans-serif; font-weight: 500; color: var(--deep-purple); margin: 0.8rem 0 1.5rem; }
+        .testimonial figcaption { display: flex; align-items: center; gap: 0.9rem; }
+        .avatar {
+            width: 52px; height: 52px; border-radius: 50%;
+            display: grid; place-items: center; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--primary-purple), var(--pink));
+            color: var(--white); font-family: 'Poppins', sans-serif; font-weight: 700;
             object-fit: cover;
-            margin: 0 auto 1rem;
-            border: 3px solid var(--light-purple);
         }
+        .testimonial cite { font-style: normal; font-weight: 700; display: block; }
+        .testimonial small { color: var(--text-light); }
+        .share-story { text-align: center; margin-top: 2.5rem; color: var(--text-light); }
 
-        .team-role {
-            color: var(--primary-purple);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* --- PARTNERSHIP SECTION (New) --- */
-        .partnership {
-            background: var(--dark-purple);
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .partnership h2 {
-            color: var(--white);
-        }
-        
-        .partnership p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* --- CONTACT SECTION & FORM --- */
-        .contact-container {
-            max-width: 1200px;
+        /* --- MERCH --- */
+        .merch-grid {
+            max-width: var(--max);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 1.2rem;
+        }
+        .merch-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .merch-card img { width: 100%; aspect-ratio: 230 / 289; object-fit: cover; background: #eee; }
+        .merch-body { padding: 0.9rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; }
+        .merch-body h3 { font-size: 1rem; }
+        .price { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--pink); }
+        .merch-body .btn { margin-top: auto; padding: 0.55rem 0.5rem; font-size: 0.8rem; white-space: nowrap; width: 100%; }
+        .merch-note { text-align: center; color: var(--text-light); margin-top: 2rem; font-size: 0.95rem; }
+
+        /* --- TEAM --- */
+        .team-grid {
+            max-width: var(--max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .team-card { background: var(--white); padding: 2rem 1.5rem; text-align: center; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+        .team-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; border: 4px solid var(--lilac); }
+        .team-photo.avatar { font-size: 2.2rem; }
+        .team-role { color: var(--pink); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .team-card p { color: var(--text-light); font-size: 0.92rem; }
+
+        /* --- PARTNERS --- */
+        .partner-list { max-width: var(--max); margin: 0 auto; display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; list-style: none; }
+        .partner-list li { font-weight: 700; color: var(--deep-purple); padding: 0.8rem 1.4rem; border: 1px solid var(--border); border-radius: 12px; background: var(--white); }
+
+        /* --- GET INVOLVED --- */
+        .involve-grid {
+            max-width: var(--max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .involve-card { border-radius: var(--radius); padding: 2rem; color: var(--white); display: flex; flex-direction: column; gap: 0.8rem; }
+        .involve-card h3 { color: var(--white); font-size: 1.4rem; }
+        .involve-card p { opacity: 0.92; flex: 1; }
+        .involve-card .btn { align-self: flex-start; }
+        .involve-card.c1 { background: var(--deep-purple); }
+        .involve-card.c2 { background: var(--primary-purple); }
+        .involve-card.c3 { background: var(--pink); }
+        .involve-card.c3 .btn-outline-light:hover { color: var(--pink); }
+
+        .future { max-width: var(--max); margin: 4rem auto 0; }
+        .future h3 { text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .future-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; }
+        .future-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; }
+        .future-item h4 { color: var(--primary-purple); margin-bottom: 0.4rem; }
+        .future-item p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* --- CONTACT --- */
+        .contact-container {
+            max-width: var(--max);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+            gap: 3rem;
             align-items: start;
         }
+        .contact-info-box { background: var(--deep-purple); color: var(--white); padding: 2.2rem; border-radius: var(--radius); }
+        .contact-info-box h3, .contact-info-box h4 { color: var(--white); margin-bottom: 1.2rem; }
+        .contact-info-box a { color: var(--white); }
+        .info-item { display: flex; align-items: flex-start; gap: 0.9rem; margin-bottom: 1.2rem; }
+        .info-item span { font-size: 1.1rem; }
 
-        .contact-info-box {
-            background: var(--primary-purple);
-            color: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius);
+        .socials { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        .socials a {
+            width: 42px; height: 42px; border-radius: 50%;
+            display: grid; place-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            transition: background 0.2s;
         }
+        .socials a:hover { background: var(--pink); }
+        .socials svg { width: 20px; height: 20px; fill: var(--white); }
 
-        .contact-info-box h3 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-item span {
-            font-size: 1.1rem;
-        }
-
-        /* Styled Form */
-        .contact-form-wrapper {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-            border: 1px solid #eee;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark-purple);
-        }
-
+        .contact-form-wrapper { background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-label { display: block; margin-bottom: 0.4rem; font-weight: 600; color: var(--deep-purple); }
         .form-input, .form-textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 6px;
-            font-family: inherit;
-            transition: border-color 0.3s;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font: inherit;
+            background: var(--white);
+            color: var(--text-dark);
         }
-
-        .form-input:focus, .form-textarea:focus {
-            outline: none;
-            border-color: var(--primary-purple);
-        }
-
-        .submit-btn {
-            background: var(--primary-purple);
-            color: var(--white);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: var(--dark-purple);
-        }
+        .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--primary-purple); }
+        .submit-btn { width: 100%; font-size: 1.05rem; }
 
         /* --- FOOTER --- */
-        footer {
-            background: #1a1a1a;
-            color: #ccc;
-            padding: 4rem 2rem 2rem;
-            text-align: center;
-        }
-        
-        footer p {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            border-top: 1px solid #333;
-            padding-top: 2rem;
-        }
+        footer { background: #160326; color: #CFC6DA; padding: 4rem 1rem 2rem; }
+        .footer-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
+        footer h4 { color: var(--white); margin-bottom: 0.8rem; font-size: 1rem; }
+        footer ul { list-style: none; }
+        footer li { margin-bottom: 0.4rem; }
+        footer a { color: #CFC6DA; text-decoration: none; }
+        footer a:hover { color: var(--white); text-decoration: underline; }
+        .footer-brand .logo-main { color: var(--white); }
+        .footer-bottom { max-width: var(--max); margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #33204A; font-size: 0.85rem; text-align: center; }
 
         /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
+        @media (max-width: 960px) {
+            .menu-toggle { display: block; }
             .nav-links {
                 display: none;
-                /* Add JS toggle logic here similar to original code */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: var(--white);
+                padding: 0.5rem 1rem 1.2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .nav-links.open { display: flex; }
+            .nav-links a { display: block; padding: 0.8rem 0.4rem; border-bottom: 1px solid var(--border); }
+            .nav-links .nav-donate-btn { margin-top: 0.8rem; text-align: center; border-bottom: 0; }
+
+            .event-grid, .about-grid, .partner-box, .contact-container { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
         }
-        /* --- FUTURE PLANS --- */
-        .future-box { background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple)); color: white; padding: 4rem 2rem; text-align: center; }
-        .future-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 2rem auto 0; text-align: left; }
-        .future-item h4 { color: var(--accent-purple); margin-bottom: 0.5rem; }
-        .future-item p { color: rgba(255,255,255,0.9); font-size: 0.95rem; }
 
-        .partners-section { background: var(--off-white); text-align: center; }
-        .partner-list { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
-        .partner-name { font-weight: 700; color: #666; font-size: 1.2rem; }
+        @media (max-width: 560px) {
+            section { padding: 3.5rem 1rem; }
+            .hero { padding-top: 3.5rem; }
+            .hero-content { padding-bottom: 3rem; }
+            .hero .btn { width: 100%; }
+            .event-strip { padding: 1.1rem 1rem; }
+            .countdown div { min-width: 0; flex: 1; }
+            .event-facts, .form-row { grid-template-columns: 1fr; }
+            .partner-box { padding: 1.5rem; }
+            .logo-tagline { display: none; }
+            .merch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+        }
 
-        .slider-wrapper { max-width: 900px; margin: 0 auto 4rem; position: relative; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md); }
-        .slides-container { display: flex; transition: transform 0.5s ease-in-out; }
-        .slide { min-width: 100%; position: relative; }
-        .slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
-        .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 1rem; text-align: center; }
-        
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; padding: 1rem; cursor: pointer; font-size: 1.5rem; color: var(--primary-purple); transition: 0.3s; }
-        .slider-btn:hover { background: white; }
-        .prev-btn { left: 10px; border-radius: 0 5px 5px 0; }
-        .next-btn { right: 10px; border-radius: 5px 0 0 5px; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav>
+    <nav class="site-nav" aria-label="Main">
         <div class="nav-container">
-            <a href="#" class="logo-container">
-                <img src="images/vision.jpeg" alt="Visionary PathWays" class="logo-img">
-                <div class="logo-text">
+            <a href="#home" class="logo-container">
+                <img src="images/vision.jpeg" alt="" class="logo-img" width="46" height="46">
+                <div>
                     <div class="logo-main">Visionary PathWays</div>
+                    <div class="logo-tagline">Empowering futures.</div>
                 </div>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#donate" class="nav-donate-btn">Donate ❤️</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMenu()">
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
                 <span></span><span></span><span></span>
-            </div>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#event" class="nav-event">Event</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-donate-btn" data-subject="Donation">Donate</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Empowering Futures</h1>
-            <p>We are a non-government organization dedicated to raising a generation of empowered, healthy, and self-reliant young people driving positive change.</p>
-            <div>
-                <a href="#donate" class="btn btn-primary">Make a Donation</a>
-                <a href="#projects" class="btn btn-secondary">See Our Work</a>
+    <main id="main">
+        <header class="hero" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">Youth-led · Kampala, Uganda</span>
+                <h1>Young people building <span class="hl">brighter futures</span> for their communities.</h1>
+                <p>Visionary PathWays is a youth-led community-based organisation empowering young people aged 15–30 with knowledge, skills and opportunities in SRHR and entrepreneurship.</p>
+                <div class="btn-row">
+                    <a href="#event" class="btn btn-pink">Join the Youth Gathering</a>
+                    <a href="#get-involved" class="btn btn-outline-light">Get Involved</a>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="event-strip" aria-label="Upcoming event">
+                <div>
+                    <strong>Annual Youth Community Gathering 2026</strong>
+                    <small>11 December 2026 · 10AM–5PM · Kanyogoga, Namuwongo</small>
+                </div>
+                <div class="countdown" id="countdown" aria-live="off">
+                    <div><b data-unit="days">--</b><span>Days</span></div>
+                    <div><b data-unit="hours">--</b><span>Hours</span></div>
+                    <div><b data-unit="minutes">--</b><span>Mins</span></div>
+                    <div><b data-unit="seconds">--</b><span>Secs</span></div>
+                </div>
+            </div>
+        </header>
 
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">2,000+</div>
-                <div class="stat-label">Youth Trained</div>
+        <section class="stats" aria-label="Our impact">
+            <div class="stats-container">
+                <div>
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">Youth Reached with SRHR Education</div>
+                </div>
+                <div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Mama Kits Given</div>
+                </div>
+                <div>
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Girls Trained in Pad Making</div>
+                </div>
+                <div>
+                    <div class="stat-number">2019</div>
+                    <div class="stat-label">Serving Youth Since</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Mama Kits Given</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Years of Impact</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">370K</div>
-                <div class="stat-label">Funds Raised (UGX)</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="section-header">
-            <h2>Our Journey & Vision</h2>
-            <p>From Bukasa Girl Care Group to Visionary PathWays.</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>Our History</h3>
-                <p>Visionary PathWays, formerly known as <strong>Bukasa Girl Care Group (BGCG)</strong>, was initiated in October 2019 by a group of teenage girls and community elders concerned about the challenges facing disadvantaged urban girls. We were officially formed on August 7th, 2019, and registered on September 8th, 2021.</p>
-                <br>
-                <p>On our 5th anniversary in <strong>August 2024</strong>, we rebranded to Visionary PathWays to serve all young people aged 15 to 30 years, realizing that both boys and girls face critical economic and health challenges.</p>
-
-                <h3>Our Vision</h3>
-                <p>A generation of empowered, healthy, and self-reliant young people driving positive change in their communities.</p>
-
-                <h3>Our Mission</h3>
-                <p>Empowering young people with knowledge, skills, and opportunities in SRHR and entrepreneurship, enabling them to make informed decisions and build sustainable livelihoods.</p>
+        <section class="event" id="event">
+            <div class="section-header">
+                <span class="kicker">Upcoming · 11 December 2026</span>
+                <h2>Annual Youth Community Gathering 2026</h2>
+                <p>Discover Opportunities. Celebrate Talent. Share Joy. A safe and joyful day for 200 young people to learn, connect, get basic health services and take home festive essentials.</p>
             </div>
-            
-            <div class="about-text">
-                <h3>Our Core Values</h3>
-                <div class="values-box">
-                    <p>These values guide every decision we make:</p>
+
+            <div class="event-grid">
+                <div>
+                    <img src="images/web/gathering-flyer.jpg" alt="Flyer for the Visionary PathWays Annual Youth Community Gathering, 11 December 2026 in Kanyogoga. Activities: medical camp, talent exhibition, festive give-back and entrepreneurship session." class="flyer" width="1080" height="1080" loading="lazy">
+                    <p class="flyer-caption">📄 <a href="images/gathering-concept-note.pdf" download>Download the concept note (PDF)</a></p>
+                </div>
+
+                <div>
+                    <div class="event-facts">
+                        <div class="fact"><span>Date</span><b>Friday, 11 December 2026</b></div>
+                        <div class="fact"><span>Time</span><b>10:00AM – 5:00PM</b></div>
+                        <div class="fact"><span>Venue</span><b>Kanyogoga, Namuwongo, Kampala</b></div>
+                        <div class="fact"><span>Who</span><b>200 youth aged 15–30 (100 young women, 100 young men)</b></div>
+                    </div>
+
+                    <h3>What's happening</h3>
+                    <div class="activities">
+                        <div class="activity">
+                            <div class="icon" aria-hidden="true">🩺</div>
+                            <h4>Youth Health Camp</h4>
+                            <p>Basic health check-ups, health information and guidance.</p>
+                        </div>
+                        <div class="activity">
+                            <div class="icon" aria-hidden="true">🎤</div>
+                            <h4>Talent Exhibition</h4>
+                            <p>Music, dance and creative performances by young people.</p>
+                        </div>
+                        <div class="activity">
+                            <div class="icon" aria-hidden="true">💡</div>
+                            <h4>Entrepreneurship Session</h4>
+                            <p>Practical lessons from young entrepreneurs and business leaders.</p>
+                        </div>
+                        <div class="activity">
+                            <div class="icon" aria-hidden="true">🤝</div>
+                            <h4>Opportunities &amp; Networking</h4>
+                            <p>Connections with organisations, professionals, mentors and businesses.</p>
+                        </div>
+                        <div class="activity">
+                            <div class="icon" aria-hidden="true">🎁</div>
+                            <h4>Festive Give-Back</h4>
+                            <p>Essentials like soap, sugar, salt and sanitary products, subject to partner support.</p>
+                        </div>
+                    </div>
+
+                    <div class="goal">
+                        <p>Our goal: every young person leaves with</p>
+                        <ul>
+                            <li>Something to learn.</li>
+                            <li>Something to look forward to.</li>
+                            <li>Something tangible to take home.</li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-row">
+                        <a href="#contact" class="btn btn-pink" data-subject="Partnership">Become a Partner</a>
+                        <a href="#contact" class="btn btn-outline-light" data-subject="Event Registration">Register to Attend</a>
+                        <a href="tel:+256700958146" class="btn btn-outline-light">📞 Call 0700 958146</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-box">
+                <div>
+                    <h3>Partner with us to create a meaningful day for 200 young people</h3>
+                    <p>Young people are creators, innovators, entrepreneurs and future leaders. Sometimes one connection, one opportunity or one act of encouragement makes a meaningful difference.</p>
+                    <h4>Ways you can support</h4>
+                    <ul class="chips">
+                        <li>Financial sponsorship</li>
+                        <li>Essential items &amp; donations</li>
+                        <li>Health services &amp; medical personnel</li>
+                        <li>Mentors, speakers &amp; entrepreneurs</li>
+                        <li>Talent support &amp; prizes</li>
+                        <li>Refreshments</li>
+                        <li>Event materials &amp; equipment</li>
+                        <li>Media &amp; publicity</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Partners receive</h4>
+                    <ul class="recognition">
+                        <li>Visibility through event branding</li>
+                        <li>Social media recognition</li>
+                        <li>Acknowledgement during the event</li>
+                        <li>Information-sharing opportunities</li>
+                        <li>A post-event report</li>
+                    </ul>
+                    <div class="btn-row" style="margin-top: 1.5rem;">
+                        <a href="#contact" class="btn btn-purple" data-subject="Partnership">Request Partnership</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-header">
+                <span class="kicker">Who we are</span>
+                <h2>Our Journey &amp; Vision</h2>
+                <p>From Bukasa Girl Care Group to Visionary PathWays.</p>
+            </div>
+            <div class="about-grid">
+                <img src="images/web/gather.jpg" alt="Visionary PathWays team and guests at a community gathering" class="about-img" width="1080" height="720" loading="lazy">
+                <div class="about-text">
+                    <h3>Our History</h3>
+                    <p>Visionary PathWays, formerly <strong>Bukasa Girl Care Group (BGCG)</strong>, was started in 2019 by a group of teenage girls and community elders concerned about the challenges facing disadvantaged urban girls. We were formed on 7 August 2019 and registered on 8 September 2021.</p>
+                    <h3>Growing to serve all youth</h3>
+                    <p>On our 5th anniversary in <strong>August 2024</strong>, we rebranded to Visionary PathWays to serve all young people aged 15 to 30, recognising that both young women and young men face critical economic and health challenges.</p>
+                </div>
+            </div>
+            <div class="vm-grid">
+                <div class="vm-card">
+                    <h3>Our Vision</h3>
+                    <p>A generation of empowered, healthy, and self-reliant young people driving positive change in their communities.</p>
+                </div>
+                <div class="vm-card">
+                    <h3>Our Mission</h3>
+                    <p>Empowering young people with knowledge, skills, and opportunities in SRHR and entrepreneurship, enabling them to make informed decisions and build sustainable livelihoods.</p>
+                </div>
+                <div class="vm-card">
+                    <h3>Our Core Values</h3>
                     <div class="values-list">
                         <span class="value-tag">Integrity</span>
                         <span class="value-tag">Perseverance</span>
@@ -600,274 +791,453 @@
                         <span class="value-tag">Community</span>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3>Our Objectives</h3>
-                <ul style="margin-top: 1rem;">
-                    <li>Promote inclusive SRHR education.</li>
-                    <li>Improve access to youth-friendly health services.</li>
-                    <li>Empower youth through entrepreneurship training.</li>
-                    <li>Promote gender equality and inclusion.</li>
-                    <li>Strengthen leadership and life skills.</li>
+        <section id="programs" class="bg-tint">
+            <div class="section-header">
+                <span class="kicker">What we do</span>
+                <h2>Our Programs</h2>
+                <p>Real impact in Kanyogoga, Soweto and Bukasa.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <img src="images/web/gallery-2.jpg" alt="Young people in an SRHR education session" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">SRHR</span>
+                        <h3>SRHR Education</h3>
+                        <p>Age-appropriate sexual and reproductive health education for over 2,000 students in local schools, with a focus on preventing teenage pregnancy.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/web/gallery-1.jpg" alt="Community training session under a tent" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">Menstrual Health</span>
+                        <h3>Reusable Pad Making</h3>
+                        <p>Training over 30 girls to make reusable sanitary pads, promoting menstrual hygiene and building economic skills.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/web/gallery-4.jpg" alt="Students in green school uniforms during a session" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">Maternal Health</span>
+                        <h3>'Wash for Her' Campaign</h3>
+                        <p>Raising funds and distributing Mama Kits to teenage mothers, supporting safe and dignified childbirth.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/web/gallery-5.jpg" alt="Visionary PathWays team with community members at Hearts Children's Academy" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">Livelihoods</span>
+                        <h3>Youth Entrepreneurship</h3>
+                        <p>Entrepreneurship training and mentorship that helps young people turn skills into sustainable livelihoods.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="section-header">
+                <span class="kicker">Gallery</span>
+                <h2>Our Work in Action</h2>
+                <p>Moments from Bukasa, Kanyogoga and Soweto.</p>
+            </div>
+            <div class="slider-wrapper" id="sliderWrapper" role="region" aria-roledescription="carousel" aria-label="Photo gallery">
+                <div class="slides-container" id="slider">
+                    <figure class="slide">
+                        <img src="images/web/gallery-1.jpg" alt="Community training session under a tent" loading="lazy">
+                        <figcaption>Training girls in reusable sanitary pad making</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="images/web/gallery-2.jpg" alt="Young people in an SRHR education session" loading="lazy">
+                        <figcaption>SRHR education with young people</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="images/web/gallery-3.jpg" alt="Girls receiving packs at a community distribution" loading="lazy">
+                        <figcaption>Annual Namuwongo Cleaning Project</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="images/web/gallery-4.jpg" alt="Students in green school uniforms during a session" loading="lazy">
+                        <figcaption>Distributing Mama Kits to Teenage Mothers</figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="images/web/gallery-5.jpg" alt="Visionary PathWays team with community members at Hearts Children's Academy" loading="lazy">
+                        <figcaption>Community outreach at Hearts Children's Academy</figcaption>
+                    </figure>
+                </div>
+                <button class="slider-btn prev-btn" id="prevBtn" aria-label="Previous photo">&#10094;</button>
+                <button class="slider-btn next-btn" id="nextBtn" aria-label="Next photo">&#10095;</button>
+            </div>
+            <div class="slider-dots" id="sliderDots" aria-label="Choose photo"></div>
+        </section>
+
+        <section id="stories" class="bg-tint">
+            <div class="section-header">
+                <span class="kicker">Stories</span>
+                <h2>In Their Own Words</h2>
+                <p>Real opportunities, real young people.</p>
+            </div>
+            <div class="testimonials-grid">
+                <figure class="testimonial">
+                    <blockquote>I got the flyer for the Groundbreaker Talents scholarship through Visionary PathWays.</blockquote>
+                    <figcaption>
+                        <div class="avatar" aria-hidden="true">JN</div>
+                        <div>
+                            <cite>Juliet Nakawesi</cite>
+                            <small>Groundbreaker Talents scholarship</small>
+                        </div>
+                    </figcaption>
+                </figure>
+                <!--
+                    ADD MORE TESTIMONIALS HERE. Only use real quotes, shared with permission
+                    (and parent/guardian consent for anyone under 18). Copy this block:
+
+                <figure class="testimonial">
+                    <blockquote>Their words here.</blockquote>
+                    <figcaption>
+                        <img src="images/web/PHOTO.jpg" alt="" class="avatar" width="52" height="52">
+                        <div>
+                            <cite>Full Name</cite>
+                            <small>Role, e.g. Mentee, Kanyogoga</small>
+                        </div>
+                    </figcaption>
+                </figure>
+                -->
+            </div>
+            <p class="share-story">Has Visionary PathWays made a difference for you? <a href="#contact" data-subject="Share My Story">Share your story</a>.</p>
+        </section>
+
+        <section id="shop">
+            <div class="section-header">
+                <span class="kicker">Shop</span>
+                <h2>Wear the Vision</h2>
+                <p>Rep Visionary PathWays and support our work. Order on WhatsApp or by phone and we'll arrange pick-up or delivery.</p>
+            </div>
+            <div class="merch-grid">
+                <article class="merch-card">
+                    <img src="images/web/merch-tee-white.jpg" alt="White Visionary PathWays T-shirt with purple logo" width="230" height="289" loading="lazy">
+                    <div class="merch-body">
+                        <h3>White T-shirt</h3>
+                        <div class="price">UGX 30,000</div>
+                        <a class="btn btn-outline wa-order" href="https://wa.me/256700958146" target="_blank" rel="noopener" data-item="White T-shirt (UGX 30,000)">Order on WhatsApp</a>
+                    </div>
+                </article>
+                <article class="merch-card">
+                    <img src="images/web/merch-tee-purple.jpg" alt="Purple Visionary PathWays T-shirt with white logo" width="230" height="289" loading="lazy">
+                    <div class="merch-body">
+                        <h3>Purple T-shirt</h3>
+                        <div class="price">UGX 30,000</div>
+                        <a class="btn btn-outline wa-order" href="https://wa.me/256700958146" target="_blank" rel="noopener" data-item="Purple T-shirt (UGX 30,000)">Order on WhatsApp</a>
+                    </div>
+                </article>
+                <article class="merch-card">
+                    <img src="images/web/merch-sweatshirt.jpg" alt="Black Visionary PathWays sweatshirt with small chest logo" width="230" height="289" loading="lazy">
+                    <div class="merch-body">
+                        <h3>Black Sweatshirt</h3>
+                        <div class="price">UGX 55,000</div>
+                        <a class="btn btn-outline wa-order" href="https://wa.me/256700958146" target="_blank" rel="noopener" data-item="Black Sweatshirt (UGX 55,000)">Order on WhatsApp</a>
+                    </div>
+                </article>
+                <article class="merch-card">
+                    <img src="images/web/merch-hoodie.jpg" alt="Purple Visionary PathWays hoodie with white logo" width="230" height="289" loading="lazy">
+                    <div class="merch-body">
+                        <h3>Purple Hoodie</h3>
+                        <div class="price">UGX 55,000</div>
+                        <a class="btn btn-outline wa-order" href="https://wa.me/256700958146" target="_blank" rel="noopener" data-item="Purple Hoodie (UGX 55,000)">Order on WhatsApp</a>
+                    </div>
+                </article>
+                <article class="merch-card">
+                    <img src="images/web/merch-bottle.jpg" alt="White Visionary PathWays water bottle" width="230" height="289" loading="lazy">
+                    <div class="merch-body">
+                        <h3>Water Bottle</h3>
+                        <div class="price">UGX 30,000</div>
+                        <a class="btn btn-outline wa-order" href="https://wa.me/256700958146" target="_blank" rel="noopener" data-item="Water Bottle (UGX 30,000)">Order on WhatsApp</a>
+                    </div>
+                </article>
+                <article class="merch-card">
+                    <img src="images/web/merch-cap.jpg" alt="Black Visionary PathWays cap with purple logo" width="230" height="289" loading="lazy">
+                    <div class="merch-body">
+                        <h3>Black Cap</h3>
+                        <div class="price">UGX 15,000</div>
+                        <a class="btn btn-outline wa-order" href="https://wa.me/256700958146" target="_blank" rel="noopener" data-item="Black Cap (UGX 15,000)">Order on WhatsApp</a>
+                    </div>
+                </article>
+            </div>
+            <p class="merch-note">Prefer to call? Reach us on <a href="tel:+256700958146">0700 958146</a>.</p>
+        </section>
+
+        <section id="team" class="bg-tint">
+            <div class="section-header">
+                <span class="kicker">Our people</span>
+                <h2>Meet Our Team</h2>
+                <p>The young leaders behind Visionary PathWays.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/web/team-mutesi.jpg" alt="Mutesi Sauya" class="team-photo" width="130" height="130" loading="lazy">
+                    <h3>Mutesi Sauya</h3>
+                    <div class="team-role">Founder &amp; CEO</div>
+                    <p>Recognised by Uganda Women's Network for exceptional leadership.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/web/team-shakeeb.jpg" alt="Lubega Shakeeb" class="team-photo" width="130" height="130" loading="lazy">
+                    <h3>Lubega Shakeeb</h3>
+                    <div class="team-role">Community Lead</div>
+                    <p>Connecting with families in Kanyogoga and Soweto.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo avatar" aria-hidden="true">SN</div>
+                    <h3>Sarah Nantongo</h3>
+                    <div class="team-role">Financial Coordinator</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo avatar" aria-hidden="true">JN</div>
+                    <h3>Julie Nakawesi</h3>
+                    <div class="team-role">Project Coordinator &amp; Web Developer</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners">
+            <div class="section-header">
+                <span class="kicker">Together</span>
+                <h2>Our Partners</h2>
+                <p>Organisations walking this journey with us.</p>
+            </div>
+            <ul class="partner-list">
+                <li>Amariatek Life Coaching</li>
+                <li>Urban Rankings Uganda</li>
+                <li>Drugs Hapana</li>
+                <li>Roli</li>
+                <li>Tanzi Foundation</li>
+            </ul>
+        </section>
+
+        <section id="get-involved" class="bg-tint">
+            <div class="section-header">
+                <span class="kicker">Get involved</span>
+                <h2>Be Part of the Change</h2>
+                <p>Whether you're a business, an organisation, or a young person with time and talent, there's a place for you.</p>
+            </div>
+            <div class="involve-grid" id="donate">
+                <div class="involve-card c1">
+                    <h3>Partner</h3>
+                    <p>Sponsor the Annual Youth Community Gathering, provide health services or mentors, or support our programs long-term.</p>
+                    <a href="#contact" class="btn btn-outline-light" data-subject="Partnership">Request Partnership</a>
+                </div>
+                <div class="involve-card c2">
+                    <h3>Volunteer</h3>
+                    <p>Share your skills as a mentor, health worker, speaker, photographer or event volunteer.</p>
+                    <a href="#contact" class="btn btn-outline-light" data-subject="Volunteering">Volunteer With Us</a>
+                </div>
+                <div class="involve-card c3">
+                    <h3>Donate</h3>
+                    <p>Your gift funds Mama Kits, sanitary products, SRHR sessions and festive essentials for young people.</p>
+                    <a href="#contact" class="btn btn-outline-light" data-subject="Donation">Make a Donation</a>
+                </div>
+            </div>
+
+            <div class="future">
+                <h3>What your support helps us build next</h3>
+                <div class="future-grid">
+                    <div class="future-item">
+                        <h4>Youth Resource Hub</h4>
+                        <p>A physical hub for digital training, mental health support and mentorship.</p>
+                    </div>
+                    <div class="future-item">
+                        <h4>Start-up Support</h4>
+                        <p>Start-up capital and tools for youth trained in vocational skills.</p>
+                    </div>
+                    <div class="future-item">
+                        <h4>Visionary Clubs</h4>
+                        <p>School clubs that foster peer education and leadership development.</p>
+                    </div>
+                    <div class="future-item">
+                        <h4>NGO Registration</h4>
+                        <p>Becoming a fully registered NGO to build institutional capacity and attract larger partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-header">
+                <span class="kicker">Contact</span>
+                <h2>Get In Touch</h2>
+                <p>Partner, volunteer, register for the Gathering, order merch, or just say hello.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info-box">
+                    <h3>Contact Info</h3>
+                    <div class="info-item">
+                        <span aria-hidden="true">📍</span>
+                        <div>Bukasa, Kampala, Uganda</div>
+                    </div>
+                    <div class="info-item">
+                        <span aria-hidden="true">📞</span>
+                        <div><a href="tel:+256700958146">+256 700 958146</a></div>
+                    </div>
+                    <div class="info-item">
+                        <span aria-hidden="true">✉️</span>
+                        <div><a href="mailto:visionarypathwa@gmail.com">visionarypathwa@gmail.com</a></div>
+                    </div>
+                    <h4 style="margin-top: 2rem;">Follow Us</h4>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/company/visionary-pathwa" target="_blank" rel="noopener" aria-label="Visionary PathWays on LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://twitter.com/visionarypathwa" target="_blank" rel="noopener" aria-label="Visionary PathWays on X">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/BukasaCare/" target="_blank" rel="noopener" aria-label="Visionary PathWays on Facebook">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <!-- TODO: add YouTube, TikTok and Instagram links once the profile URLs are confirmed -->
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form action="https://formsubmit.co/visionarypathwa@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New message from the Visionary PathWays website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone (optional)</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" placeholder="07XX XXX XXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subject">I'm reaching out about</label>
+                            <select id="subject" name="topic" class="form-input">
+                                <option>General Inquiry</option>
+                                <option>Partnership</option>
+                                <option>Event Registration</option>
+                                <option>Volunteering</option>
+                                <option>Donation</option>
+                                <option>Merch Order</option>
+                                <option>Share My Story</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-purple submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-main">Visionary PathWays</div>
+                <p style="margin-top: 0.5rem;">A youth-led community-based organisation in Bukasa, Kampala, empowering young people through SRHR and entrepreneurship.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#event">Youth Gathering 2026</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="#contact" data-subject="Partnership">Partner</a></li>
+                    <li><a href="#contact" data-subject="Volunteering">Volunteer</a></li>
+                    <li><a href="#contact" data-subject="Donation">Donate</a></li>
+                    <li><a href="tel:+256700958146">0700 958146</a></li>
                 </ul>
             </div>
         </div>
-        <div style="max-width: 900px; margin: 0 auto; text-align: center; color: var(--text-dark);">            
-            <img src="images/gather.jpg" alt="Community Gathering" style="width: 100%; border-radius: var(--radius); margin-top: 1rem;">
-        </div>
-    </section>
-    
-
-    
-    <section id="projects" style="background-color: var(--off-white);">
-        <div class="section-header">
-            <h2>Our Key Projects</h2>
-            <p>Real impact in Kanyogoga, Soweto, and Bukasa.</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://placehold.co/600x400/purple/white?text=Reusable+Pads" alt="Pad Making" class="project-img">
-                <div class="project-content">
-                    <h3>Reusable Pad Making</h3>
-                    <p>Training over 30 girls in the production of reusable sanitary pads to promote menstrual hygiene and economic skills.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="https://placehold.co/600x400/purple/white?text=SRHR+Education" alt="SRHR Education" class="project-img">
-                <div class="project-content">
-                    <h3>SRHR Education</h3>
-                    <p>Providing age-appropriate sexual and reproductive health education to over 2,000 students in local schools.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="https://placehold.co/600x400/purple/white?text=Community+Outreach" alt="Community Outreach" class="project-img">
-                <div class="project-content">
-                    <h3>'Wash for Her' Campaign</h3>
-                    <p>Raising funds and distributing Mama Kits to teenage mothers, ensuring safe and dignified childbirth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="projects" style="background-color: var(--off-white);">
-        <div class="section-header">
-            <h2>Our Gallery</h2>
-            <p>See our work in action across Bukasa, Kanyogoga, and Soweto.</p>
-        </div>
-        <div class="slider-wrapper">
-            <div class="slides-container" id="slider">
-                <div class="slide">
-                    <img src="images/-4bayft.jpg" alt="Pad Making Training">
-                    <div class="slide-caption">Training girls in reusable sanitary pad making</div>
-                </div>
-                <div class="slide">
-                    <img src="images/-c9wg47.jpg" alt="School Outreach">
-                    <div class="slide-caption">SRHR Education in Local Schools</div>
-                </div>
-                <div class="slide">
-                    <img src="images/IMG_20231218_225233_449.jpg" alt="Community Cleaning">
-                    <div class="slide-caption">Annual Namuwongo Cleaning Project</div>
-                </div>
-                 <div class="slide">
-                    <img src="images/IMG_20240327_113313_803.jpg" alt="Mama Kits">
-                    <div class="slide-caption">Distributing Mama Kits to Teenage Mothers</div>
-                </div>
-            </div>
-            <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-    </section>
-
-    
-    <section id="team" class="team-section">
-        <div class="section-header">
-            <h2>Meet Our Team</h2>
-            <p>The dedicated individuals behind Visionary PathWays.</p>
-        </div>
-        <div class="team-grid">
-            <div class="team-card">
-                <img src="images/ceo.jpg" alt="Mutesi Sauya" class="team-photo" onerror="this.src='https://placehold.co/150x150?text=CEO'">
-                <h3>Mutesi Sauya</h3>
-                <div class="team-role">Founder & CEO</div>
-                <p>Recognized by Uganda Women's Network for exceptional leadership.</p>
-            </div>
-
-            <div class="team-card">
-                <img src="https://placehold.co/150x150?text=Photo" alt="Team Member" class="team-photo">
-                <h3>John Doe</h3>
-                <div class="team-role">Program Manager</div>
-                <p>Leading our educational initiatives across Kampala.</p>
-            </div>
-
-            <div class="team-card">
-                <img src="images/shakeeb.png" alt="Team Member" class="team-photo">
-                <h3>Lubega Shakeeb</h3>
-                <div class="team-role">Community Lead</div>
-                <p>Connecting with families in Kanyogoga and Soweto.</p>
-            </div>
-        </div>
-    </section>
-    <section class="partners-section">
-        <h3>Our Partners</h3>
-        <div class="partner-list">
-            <span class="partner-name">Amariatek Life Coaching</span>
-            <span class="partner-name">Urban Rankings Uganda</span>
-            <span class="partner-name">Drugs Hapana</span>
-            <span class="partner-name">Roli</span>
-            <span class="partner-name">Tanzi Foundation</span>
-        </div>
-    </section>
-    <section class="future-box">
-        <h2>Future Plans & Needed Support</h2>
-        <p>We are looking for partners and funding to help us achieve the following:</p>
-        <div class="future-grid">
-            <div class="future-item">
-                <h4>Youth Resource Hub</h4>
-                <p>Establish a physical hub for digital training, mental health support, and mentorship.</p>
-            </div>
-            <div class="future-item">
-                <h4>Start-up Support</h4>
-                <p>Provide start-up capital and tools for youth trained in vocational skills.</p>
-            </div>
-            <div class="future-item">
-                <h4>Visionary Clubs</h4>
-                <p>Create clubs in schools to foster peer education and leadership development.</p>
-            </div>
-            <div class="future-item">
-                <h4>NGO Registration</h4>
-                <p>Transition into a fully registered NGO to build institutional capacity and attract larger partnerships.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="partnership">
-        <div class="section-header">
-            <h2 style="color:white; border-bottom-color: white;">Partner With Us</h2>
-        </div>
-        <p>We believe in the power of collaboration. Whether you are a corporate entity, another NGO, or a government body, we invite you to join us in empowering the next generation.</p>
-        <a href="#contact" class="btn btn-primary" style="background: white; color: var(--primary-purple); border: none;">Request Partnership</a>
-    </section>
-
-    
-    <section id="contact">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p>We would love to hear from you.</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info-box">
-                <h3>Contact Info</h3>
-                <div class="info-item">
-                    <span>📍</span>
-                    <div>Bukasa, Kampala, Uganda</div>
-                </div>
-                <div class="info-item">
-                    <span>📞</span>
-                    <div>+256 700 958146</div>
-                </div>
-                <div class="info-item">
-                    <span>✉️</span>
-                    <div>visionarypathwa@gmail.com</div>
-                </div>
-                <div style="margin-top: 2rem;">
-                    <h4>Follow Us</h4>
-                    <div style="margin-top: 2rem;">
-                        <h4 style="margin-bottom: 1rem;">Follow Us</h4>
-                        <div style="display: flex; gap: 1.5rem;">
-                            
-                            <a href="linkedin.com/company/visionary-pathwa" target="_blank" title="Connect on LinkedIn" style="text-decoration: none;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                    
-                            <a href="https://twitter.com/visionarypathwa" target="_blank" title="Follow on X" style="text-decoration: none;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                </svg>
-                            </a>
-                    
-                            <a href="https://www.facebook.com/BukasaCare/" target="_blank" title="Like us on Facebook" style="text-decoration: none;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
-                                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-                                </svg>
-                            </a>
-                    
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form-wrapper">
-                <form>
-                    <div class="form-group">
-                        <label class="form-label">Full Name</label>
-                        <input type="text" class="form-input" placeholder="e.g. John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" placeholder="e.g. john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Subject</label>
-                        <select class="form-input">
-                            <option>General Inquiry</option>
-                            <option>Partnership Request</option>
-                            <option>Volunteering</option>
-                            <option>Donation Help</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-textarea" rows="5" placeholder="How can we help you?" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="logo-main" style="color: white; margin-bottom: 1rem;">Visionary PathWays</div>
-        <div style="color: #999;">Empowering Futures.</div>
-        <p>&copy; 2025 Visionary PathWays. All Rights Reserved.</p>
+        <div class="footer-bottom">&copy; <span id="year">2026</span> Visionary PathWays. Empowering futures.</div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const style = window.getComputedStyle(navLinks);
-            if (style.display === 'none') {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'white';
-                navLinks.style.padding = '2rem';
-                navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-            } else {
-                navLinks.style.display = 'none';
-            }
+        // Mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        function setMenu(open) {
+            navLinks.classList.toggle('open', open);
+            menuToggle.setAttribute('aria-expanded', open);
+            menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         }
+        menuToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+        // Links that pre-select a subject in the contact form
+        const subjectSelect = document.getElementById('subject');
+        document.querySelectorAll('[data-subject]').forEach(link => {
+            link.addEventListener('click', () => { subjectSelect.value = link.dataset.subject; });
+        });
+
+        // WhatsApp merch orders with a pre-filled message
+        document.querySelectorAll('.wa-order').forEach(link => {
+            link.href = 'https://wa.me/256700958146?text=' +
+                encodeURIComponent('Hello Visionary PathWays, I would like to order: ' + link.dataset.item);
+        });
+
+        // Event countdown (11 Dec 2026, 10:00 East Africa Time)
+        const eventDate = new Date('2026-12-11T10:00:00+03:00');
+        const units = {};
+        document.querySelectorAll('#countdown [data-unit]').forEach(el => units[el.dataset.unit] = el);
+        function tick() {
+            const diff = Math.max(0, eventDate - Date.now());
+            const pad = n => String(n).padStart(2, '0');
+            units.days.textContent = Math.floor(diff / 86400000);
+            units.hours.textContent = pad(Math.floor(diff / 3600000) % 24);
+            units.minutes.textContent = pad(Math.floor(diff / 60000) % 60);
+            units.seconds.textContent = pad(Math.floor(diff / 1000) % 60);
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        // Gallery slider
+        const slider = document.getElementById('slider');
+        const slides = slider.querySelectorAll('.slide');
+        const dotsWrap = document.getElementById('sliderDots');
         let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const container = document.getElementById('slider');
-
-        function moveSlide(n) {
-            slideIndex += n;
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            
-            // Move the container
-            container.style.transform = `translateX(${-slideIndex * 100}%)`;
+        const dots = Array.from(slides, (_, i) => {
+            const b = document.createElement('button');
+            b.setAttribute('aria-label', 'Show photo ' + (i + 1));
+            b.addEventListener('click', () => showSlide(i));
+            dotsWrap.appendChild(b);
+            return b;
+        });
+        function showSlide(i) {
+            slideIndex = (i + slides.length) % slides.length;
+            slider.style.transform = `translateX(${-slideIndex * 100}%)`;
+            slides.forEach((s, j) => s.setAttribute('aria-hidden', j !== slideIndex));
+            dots.forEach((d, j) => d.setAttribute('aria-current', j === slideIndex));
         }
+        document.getElementById('prevBtn').addEventListener('click', () => showSlide(slideIndex - 1));
+        document.getElementById('nextBtn').addEventListener('click', () => showSlide(slideIndex + 1));
+        showSlide(0);
 
-        // Auto slide every 5 seconds
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
+        // Auto-advance, paused on hover/focus and for reduced-motion users
+        const wrapper = document.getElementById('sliderWrapper');
+        let paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        wrapper.addEventListener('mouseenter', () => paused = true);
+        wrapper.addEventListener('mouseleave', () => paused = false);
+        wrapper.addEventListener('focusin', () => paused = true);
+        wrapper.addEventListener('focusout', () => paused = false);
+        setInterval(() => { if (!paused) showSlide(slideIndex + 1); }, 5000);
+
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

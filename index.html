@@ -146,7 +146,7 @@
             color: var(--white);
             background:
                 linear-gradient(100deg, rgba(36, 6, 63, 0.92) 0%, rgba(60, 9, 108, 0.75) 45%, rgba(60, 9, 108, 0.2) 100%),
-                url('images/web/hero.jpg') center / cover no-repeat;
+                url('images/web/outreach-2.jpg') center / cover no-repeat;
             padding: 6rem 1rem 0;
         }
 
@@ -365,6 +365,39 @@
         .project-content h3 { margin: 0.3rem 0 0.5rem; font-size: 1.2rem; }
         .project-content p { color: var(--text-light); font-size: 0.95rem; }
 
+        /* --- CORE PROGRAMS --- */
+        .programs-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .program-card { background: var(--white); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow-md); border-top: 4px solid var(--primary-purple); display: flex; flex-direction: column; gap: 0.6rem; }
+        .program-card:nth-child(2) { border-top-color: var(--pink); }
+        .program-card:nth-child(3) { border-top-color: var(--gold); }
+        .program-card:nth-child(4) { border-top-color: var(--light-purple); }
+        .program-icon { font-size: 2rem; width: 56px; height: 56px; display: grid; place-items: center; background: var(--lilac); border-radius: 14px; }
+        .program-card h3 { font-size: 1.2rem; }
+        .program-card p { color: var(--text-light); font-size: 0.95rem; flex: 1; }
+        .program-link { font-weight: 600; text-decoration: none; }
+
+        .vm-card.objectives { grid-column: 1 / -1; }
+        .objectives ul { columns: 2 300px; column-gap: 2rem; padding-left: 1.1rem; }
+        .objectives li { margin-bottom: 0.5rem; break-inside: avoid; }
+
+        .report-banner {
+            max-width: var(--max); margin: 2.5rem auto 0;
+            display: grid; grid-template-columns: 260px 1fr; align-items: center; gap: 1.5rem;
+            background: var(--deep-purple); color: var(--white); border-radius: var(--radius);
+            overflow: hidden; text-decoration: none; transition: transform 0.2s;
+        }
+        .report-banner:hover { transform: translateY(-3px); }
+        .report-banner img { width: 100%; height: 100%; min-height: 160px; object-fit: cover; }
+        .report-banner > div { padding: 1.5rem 1.5rem 1.5rem 0; }
+        .report-banner h3 { color: var(--white); font-size: 1.4rem; margin: 0.3rem 0; }
+        .report-banner .project-tag { color: var(--gold); }
+        .report-banner p { opacity: 0.9; }
+        @media (max-width: 640px) {
+            .report-banner { grid-template-columns: 1fr; }
+            .report-banner > div { padding: 0 1.5rem 1.5rem; }
+            .report-banner img { height: 160px; }
+        }
+
         /* --- GALLERY SLIDER --- */
         .slider-wrapper { max-width: 900px; margin: 0 auto; position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: #000; }
         .slides-container { display: flex; transition: transform 0.5s ease-in-out; }
@@ -547,7 +580,7 @@
         .footer-bottom { max-width: var(--max); margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #33204A; font-size: 0.85rem; text-align: center; }
 
         /* --- RESPONSIVE --- */
-        @media (max-width: 960px) {
+        @media (max-width: 1100px) {
             .menu-toggle { display: block; }
             .nav-links {
                 display: none;
@@ -608,6 +641,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#programs">Programs</a></li>
+                <li><a href="#impact">Impact</a></li>
                 <li><a href="#event" class="nav-event">Event</a></li>
                 <li><a href="#stories">Stories</a></li>
                 <li><a href="#shop">Shop</a></li>
@@ -647,15 +681,15 @@
             <div class="stats-container">
                 <div>
                     <div class="stat-number">2,000+</div>
-                    <div class="stat-label">Youth Reached with SRHR Education</div>
+                    <div class="stat-label">Students Trained in SRHR</div>
                 </div>
                 <div>
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Mama Kits Given</div>
+                    <div class="stat-label">Mama Kits Distributed</div>
                 </div>
                 <div>
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label">Girls Trained in Pad Making</div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Community Outreaches</div>
                 </div>
                 <div>
                     <div class="stat-number">2019</div>
@@ -767,15 +801,18 @@
             <div class="section-header">
                 <span class="kicker">Who we are</span>
                 <h2>Our Journey &amp; Vision</h2>
-                <p>From Bukasa Girl Care Group to Visionary PathWays.</p>
+                <p>From Bukasa Girl Care Group to a youth-empowerment organisation.</p>
             </div>
             <div class="about-grid">
                 <img src="images/web/gather.jpg" alt="Visionary PathWays team and guests at a community gathering" class="about-img" width="1080" height="720" loading="lazy">
                 <div class="about-text">
                     <h3>Our History</h3>
-                    <p>Visionary PathWays, formerly <strong>Bukasa Girl Care Group (BGCG)</strong>, was started in 2019 by a group of teenage girls and community elders concerned about the challenges facing disadvantaged urban girls. We were formed on 7 August 2019 and registered on 8 September 2021.</p>
-                    <h3>Growing to serve all youth</h3>
-                    <p>On our 5th anniversary in <strong>August 2024</strong>, we rebranded to Visionary PathWays to serve all young people aged 15 to 30, recognising that both young women and young men face critical economic and health challenges.</p>
+                    <p>Visionary PathWays, formerly <strong>Bukasa Girl Care Group (BGCG)</strong>, was initiated in October 2019 by a group of teenage girls and community elders concerned about the challenges facing disadvantaged urban girls in Bukasa, Kijwa zone and Namuwongo. We were officially formed on 7 August 2019 and registered on 8 September 2021.</p>
+                    <p style="margin-top: 0.8rem;">On our 5th anniversary in <strong>August 2024</strong>, recognising that both young women and young men face critical economic and health challenges, we rebranded to Visionary PathWays to serve all young people aged 15 to 30.</p>
+                    <h3>Our Goal</h3>
+                    <p>To support young people through capacity-building activities, knowledge, skills, networks and motivation that improve living standards, dignity and self-esteem.</p>
+                    <h3>Who We Serve</h3>
+                    <p>Youth, people with disabilities, teenage mothers, school dropouts, survivors of gender-based violence, and vulnerable girls in Kanyogoga, Soweto and surrounding communities.</p>
                 </div>
             </div>
             <div class="vm-grid">
@@ -785,7 +822,7 @@
                 </div>
                 <div class="vm-card">
                     <h3>Our Mission</h3>
-                    <p>Empowering young people with knowledge, skills, and opportunities in SRHR and entrepreneurship, enabling them to make informed decisions and build sustainable livelihoods.</p>
+                    <p>Empowering young people with knowledge, skills, and opportunities in sexual and reproductive health and rights (SRHR) and entrepreneurship, enabling them to make informed decisions and build sustainable livelihoods.</p>
                 </div>
                 <div class="vm-card">
                     <h3>Our Core Values</h3>
@@ -797,78 +834,119 @@
                         <span class="value-tag">Community</span>
                     </div>
                 </div>
+                <div class="vm-card objectives">
+                    <h3>Our Objectives</h3>
+                    <ul>
+                        <li><strong>Promote inclusive SRHR education</strong> through age-appropriate, gender-sensitive information.</li>
+                        <li><strong>Improve access to youth-friendly SRHR services</strong> that are safe and confidential.</li>
+                        <li><strong>Empower youth through entrepreneurship</strong> for self-reliance and economic growth.</li>
+                        <li><strong>Promote gender equality</strong> by advocating for equal opportunities and inclusion.</li>
+                        <li><strong>Strengthen leadership and life skills</strong> in confident, responsible youth leaders.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="programs" class="bg-tint">
             <div class="section-header">
                 <span class="kicker">What we do</span>
-                <h2>Our Programs</h2>
-                <p>Real impact in Kanyogoga, Soweto and Bukasa.</p>
+                <h2>Our Core Programs</h2>
+                <p>Targeted initiatives designed to uplift, educate and empower young people.</p>
             </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <img src="images/web/gallery-2.jpg" alt="Young people in an SRHR education session" class="project-img" loading="lazy">
-                    <div class="project-content">
-                        <span class="project-tag">SRHR</span>
-                        <h3>SRHR Education</h3>
-                        <p>Age-appropriate sexual and reproductive health education for over 2,000 students in local schools, with a focus on preventing teenage pregnancy.</p>
-                    </div>
+            <div class="programs-grid">
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">🤱</div>
+                    <h3>Rise Her Initiative</h3>
+                    <p>Supports teenage mothers through psychosocial support, SRHR education, entrepreneurship and vocational skills training, start-up capital, mentorship, and linkages to supportive agencies, restoring dignity and promoting economic independence.</p>
+                    <a href="#stories" class="program-link">Read Nansikombi's story →</a>
                 </article>
-                <article class="project-card">
-                    <img src="images/web/gallery-1.jpg" alt="Community training session under a tent" class="project-img" loading="lazy">
-                    <div class="project-content">
-                        <span class="project-tag">Menstrual Health</span>
-                        <h3>Reusable Pad Making</h3>
-                        <p>Training over 30 girls to make reusable sanitary pads, promoting menstrual hygiene and building economic skills.</p>
-                    </div>
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">🚀</div>
+                    <h3>Rise Me Program</h3>
+                    <p>Empowers youth aged 15–30 through leadership development, SRHR education, entrepreneurship training and digital engagement, fostering the next generation of community leaders.</p>
                 </article>
-                <article class="project-card">
-                    <img src="images/web/gallery-4.jpg" alt="Students in green school uniforms during a session" class="project-img" loading="lazy">
-                    <div class="project-content">
-                        <span class="project-tag">Maternal Health</span>
-                        <h3>'Wash for Her' Campaign</h3>
-                        <p>Raising funds and distributing Mama Kits to teenage mothers, supporting safe and dignified childbirth.</p>
-                    </div>
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">🏫</div>
+                    <h3>Pathfinders School</h3>
+                    <p>A school-based program in primary and secondary schools covering age-appropriate SRHR, life skills, leadership, mental health awareness, career guidance, and the formation of Visionary Clubs.</p>
                 </article>
-                <article class="project-card">
-                    <img src="images/web/gallery-5.jpg" alt="Visionary PathWays team with community members at Hearts Children's Academy" class="project-img" loading="lazy">
-                    <div class="project-content">
-                        <span class="project-tag">Livelihoods</span>
-                        <h3>Youth Entrepreneurship</h3>
-                        <p>Entrepreneurship training and mentorship that helps young people turn skills into sustainable livelihoods.</p>
-                    </div>
+                <article class="program-card">
+                    <div class="program-icon" aria-hidden="true">🎙️</div>
+                    <h3>Visionary Monthly Talks</h3>
+                    <p>Monthly interactive X Spaces where leaders and experts speak, inspire and engage directly with young people on youth-centred topics and advocacy.</p>
                 </article>
             </div>
         </section>
 
-        <section id="gallery">
+        <section id="impact">
+            <div class="section-header">
+                <span class="kicker">Our impact</span>
+                <h2>Impact &amp; Achievements</h2>
+                <p>Real, measurable change in Bukasa, Kanyogoga and Soweto.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <img src="images/web/gallery-1.jpg" alt="Young people at a skills training session under a tent" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">Livelihoods</span>
+                        <h3>Vocational Skills Training</h3>
+                        <p>Trained over 30 girls in reusable sanitary pad making, and 20 girls in paper bag and briquette production: eco-friendly skills for alternative livelihoods.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/web/gallery-4.jpg" alt="Students during a Visionary PathWays session" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">Maternal Health</span>
+                        <h3>Maternal Health &amp; Support</h3>
+                        <p>Raised UGX 370,000 in our 'Wash for Her, Raise Her' campaign and distributed 50 Mama Kits to teenage mothers for safe deliveries. Provided start-up capital and school fees for teenage mothers.</p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/web/gallery-3.jpg" alt="Girls receiving packs at a community outreach" class="project-img" loading="lazy">
+                    <div class="project-content">
+                        <span class="project-tag">Community</span>
+                        <h3>Community Outreaches</h3>
+                        <p>12 community outreaches on SRHR and entrepreneurship. Official partners in the Annual Cloth Namuwongo Project (cleaning, tree planting, donation drives). Provided 20 bicycles to Community Health Workers.</p>
+                    </div>
+                </article>
+            </div>
+            <a class="report-banner" href="outreach_report.html" id="reports">
+                <img src="images/web/outreach-3.jpg" alt="" loading="lazy">
+                <div>
+                    <span class="project-tag">Report</span>
+                    <h3>Arise &amp; Community Outreach 2025 Report</h3>
+                    <p>See what we did, who we reached and what we learned. Read the full report →</p>
+                </div>
+            </a>
+        </section>
+
+        <section id="gallery" class="bg-tint">
             <div class="section-header">
                 <span class="kicker">Gallery</span>
                 <h2>Our Work in Action</h2>
-                <p>Moments from Bukasa, Kanyogoga and Soweto.</p>
+                <p>Moments from our community work.</p>
             </div>
             <div class="slider-wrapper" id="sliderWrapper" role="region" aria-roledescription="carousel" aria-label="Photo gallery">
                 <div class="slides-container" id="slider">
                     <figure class="slide">
-                        <img src="images/web/gallery-1.jpg" alt="Community training session under a tent" loading="lazy">
-                        <figcaption>Training girls in reusable sanitary pad making</figcaption>
+                        <img src="images/web/outreach-1.jpg" alt="Girls holding reusable pads" loading="lazy">
+                        <figcaption>Empowering girls with reusable sanitary pads</figcaption>
                     </figure>
                     <figure class="slide">
-                        <img src="images/web/gallery-2.jpg" alt="Young people in an SRHR education session" loading="lazy">
-                        <figcaption>SRHR education with young people</figcaption>
+                        <img src="images/web/outreach-2.jpg" alt="Girls cheering with raised arms" loading="lazy">
+                        <figcaption>High energy and enthusiasm during our outreach sessions</figcaption>
                     </figure>
                     <figure class="slide">
-                        <img src="images/web/gallery-3.jpg" alt="Girls receiving packs at a community distribution" loading="lazy">
-                        <figcaption>Annual Namuwongo Cleaning Project</figcaption>
+                        <img src="images/web/outreach-3.jpg" alt="Team and community members with the outreach banner" loading="lazy">
+                        <figcaption>Our team and community members at the Arise &amp; Thrive Outreach</figcaption>
                     </figure>
                     <figure class="slide">
-                        <img src="images/web/gallery-4.jpg" alt="Students in green school uniforms during a session" loading="lazy">
-                        <figcaption>Distributing Mama Kits to Teenage Mothers</figcaption>
+                        <img src="images/web/outreach-4.jpg" alt="A participant speaking into a microphone" loading="lazy">
+                        <figcaption>Fostering open dialogue in interactive SRHR sessions</figcaption>
                     </figure>
                     <figure class="slide">
-                        <img src="images/web/gallery-5.jpg" alt="Visionary PathWays team with community members at Hearts Children's Academy" loading="lazy">
-                        <figcaption>Community outreach at Hearts Children's Academy</figcaption>
+                        <img src="images/web/outreach-5.jpg" alt="A woman speaking to young people" loading="lazy">
+                        <figcaption>Community leaders guiding and mentoring the next generation</figcaption>
                     </figure>
                 </div>
                 <button class="slider-btn prev-btn" id="prevBtn" aria-label="Previous photo">&#10094;</button>
@@ -877,7 +955,7 @@
             <div class="slider-dots" id="sliderDots" aria-label="Choose photo"></div>
         </section>
 
-        <section id="stories" class="bg-tint">
+        <section id="stories">
             <div class="section-header">
                 <span class="kicker">Stories</span>
                 <h2>In Their Own Words</h2>
@@ -926,7 +1004,7 @@
             <p class="share-story">Has Visionary PathWays made a difference for you? <a href="#contact" data-subject="Share My Story">Share your story</a>.</p>
         </section>
 
-        <section id="shop">
+        <section id="shop" class="bg-tint">
             <div class="section-header">
                 <span class="kicker">Shop</span>
                 <h2>Wear the Vision</h2>
@@ -985,73 +1063,76 @@
             <p class="merch-note">Prefer to call? Reach us on <a href="tel:+256700958146">0700 958146</a>.</p>
         </section>
 
-        <section id="team" class="bg-tint">
+        <section id="team">
             <div class="section-header">
                 <span class="kicker">Our people</span>
-                <h2>Meet Our Team</h2>
-                <p>The young leaders behind Visionary PathWays.</p>
+                <h2>Meet Our Leadership</h2>
+                <p>The dedicated young leaders driving the vision forward.</p>
             </div>
             <div class="team-grid">
                 <div class="team-card">
                     <img src="images/web/team-mutesi.jpg" alt="Mutesi Sauya" class="team-photo" width="130" height="130" loading="lazy">
                     <h3>Mutesi Sauya</h3>
                     <div class="team-role">Founder &amp; CEO</div>
-                    <p>Recognised by Uganda Women's Network for exceptional leadership.</p>
+                    <p>Awarded by the Uganda Women's Network for exceptional leadership and the impactful work of Visionary PathWays.</p>
                 </div>
                 <div class="team-card">
                     <img src="images/web/team-shakeeb.jpg" alt="Lubega Shakeeb" class="team-photo" width="130" height="130" loading="lazy">
                     <h3>Lubega Shakeeb</h3>
                     <div class="team-role">Community Lead</div>
-                    <p>Connecting with families in Kanyogoga and Soweto.</p>
+                    <p>Spearheading our community outreach and connecting directly with youth in Kanyogoga and Soweto.</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-photo avatar" aria-hidden="true">SN</div>
-                    <h3>Sarah Nantongo</h3>
-                    <div class="team-role">Financial Coordinator</div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo avatar" aria-hidden="true">JN</div>
+                    <img src="images/web/team-julie.jpg" alt="Julie Nakawesi" class="team-photo" width="130" height="130" loading="lazy" style="object-position: center 15%;">
                     <h3>Julie Nakawesi</h3>
-                    <div class="team-role">Project Coordinator &amp; Web Developer</div>
+                    <div class="team-role">Project Coordinator</div>
+                    <p>Ensuring the smooth execution of our programs and coordinating efforts across our community initiatives.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/web/team-satino.jpg" alt="Satino Favor" class="team-photo" width="130" height="130" loading="lazy">
+                    <h3>Satino Favor</h3>
+                    <div class="team-role">Financial Coordinator</div>
+                    <p>Managing budget tracking, resource allocation, and financial accountability for all our outreach activities.</p>
                 </div>
             </div>
         </section>
 
-        <section id="partners">
+        <section id="partners" class="bg-tint">
             <div class="section-header">
                 <span class="kicker">Together</span>
-                <h2>Our Partners</h2>
+                <h2>Our Valued Partners</h2>
                 <p>Organisations walking this journey with us.</p>
             </div>
             <ul class="partner-list">
                 <li>Amariatek Life Coaching</li>
                 <li>Urban Rankings Uganda</li>
+                <li>She Rebuilds Foundation</li>
                 <li>Drugs Hapana</li>
                 <li>Roli</li>
                 <li>Tanzi Foundation</li>
             </ul>
         </section>
 
-        <section id="get-involved" class="bg-tint">
+        <section id="get-involved">
             <div class="section-header">
                 <span class="kicker">Get involved</span>
                 <h2>Be Part of the Change</h2>
-                <p>Whether you're a business, an organisation, or a young person with time and talent, there's a place for you.</p>
+                <p>We actively seek linkages, collaborations and support from development partners, businesses and individuals.</p>
             </div>
             <div class="involve-grid" id="donate">
                 <div class="involve-card c1">
                     <h3>Partner</h3>
-                    <p>Sponsor the Annual Youth Community Gathering, provide health services or mentors, or support our programs long-term.</p>
+                    <p>Collaborate with us as a development partner, NGO, government body or business, or sponsor the Annual Youth Community Gathering.</p>
                     <a href="#contact" class="btn btn-outline-light" data-subject="Partnership">Request Partnership</a>
                 </div>
                 <div class="involve-card c2">
                     <h3>Volunteer</h3>
-                    <p>Share your skills as a mentor, health worker, speaker, photographer or event volunteer.</p>
+                    <p>Share your skills as a mentor, health worker, speaker or event volunteer. We also welcome partnerships with universities to host skilled volunteers.</p>
                     <a href="#contact" class="btn btn-outline-light" data-subject="Volunteering">Volunteer With Us</a>
                 </div>
                 <div class="involve-card c3">
                     <h3>Donate</h3>
-                    <p>Your gift funds Mama Kits, sanitary products, SRHR sessions and festive essentials for young people.</p>
+                    <p>Fund program implementation, Mama Kits, sanitary products and start-up capital for trained youth.</p>
                     <a href="#contact" class="btn btn-outline-light" data-subject="Donation">Make a Donation</a>
                 </div>
             </div>
@@ -1061,15 +1142,15 @@
                 <div class="future-grid">
                     <div class="future-item">
                         <h4>Youth Resource Hub</h4>
-                        <p>A physical hub for digital training, mental health support and mentorship.</p>
+                        <p>A physical innovation hub for SRHR services, mental health support, and digital and entrepreneurship training.</p>
                     </div>
                     <div class="future-item">
                         <h4>Start-up Support</h4>
-                        <p>Start-up capital and tools for youth trained in vocational skills.</p>
+                        <p>Start-up capital after vocational training to ensure economic independence.</p>
                     </div>
                     <div class="future-item">
                         <h4>Visionary Clubs</h4>
-                        <p>School clubs that foster peer education and leadership development.</p>
+                        <p>Student-led clubs in schools for SRHR peer education and leadership.</p>
                     </div>
                     <div class="future-item">
                         <h4>NGO Registration</h4>
@@ -1079,7 +1160,7 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="bg-tint">
             <div class="section-header">
                 <span class="kicker">Contact</span>
                 <h2>Get In Touch</h2>
@@ -1090,7 +1171,7 @@
                     <h3>Contact Info</h3>
                     <div class="info-item">
                         <span aria-hidden="true">📍</span>
-                        <div>Bukasa, Kampala, Uganda</div>
+                        <div>Bukasa, Kijwa zone, Namuwongo<br>Kampala, Uganda</div>
                     </div>
                     <div class="info-item">
                         <span aria-hidden="true">📞</span>
@@ -1102,16 +1183,13 @@
                     </div>
                     <h4 style="margin-top: 2rem;">Follow Us</h4>
                     <div class="socials">
-                        <a href="https://www.linkedin.com/company/visionary-pathwa" target="_blank" rel="noopener" aria-label="Visionary PathWays on LinkedIn">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </a>
                         <a href="https://twitter.com/visionarypathwa" target="_blank" rel="noopener" aria-label="Visionary PathWays on X">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         </a>
-                        <a href="https://www.facebook.com/BukasaCare/" target="_blank" rel="noopener" aria-label="Visionary PathWays on Facebook">
+                        <a href="https://www.facebook.com/VisionaryPathWays" target="_blank" rel="noopener" aria-label="Visionary PathWays on Facebook">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                         </a>
-                        <!-- TODO: add YouTube, TikTok and Instagram links once the profile URLs are confirmed -->
+                        <!-- TODO: add YouTube, TikTok, Instagram and LinkedIn links once the profile URLs are confirmed -->
                     </div>
                 </div>
 
@@ -1161,13 +1239,15 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="logo-main">Visionary PathWays</div>
-                <p style="margin-top: 0.5rem;">A youth-led community-based organisation in Bukasa, Kampala, empowering young people through SRHR and entrepreneurship.</p>
+                <p style="margin-top: 0.5rem;">A youth-led community-based organisation in Bukasa, Namuwongo, Kampala, empowering young people through SRHR and entrepreneurship.</p>
             </div>
             <div>
                 <h4>Explore</h4>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#programs">Programs</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="outreach_report.html">2025 Outreach Report</a></li>
                     <li><a href="#event">Youth Gathering 2026</a></li>
                     <li><a href="#shop">Shop</a></li>
                 </ul>
@@ -1182,7 +1262,7 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">&copy; <span id="year">2026</span> Visionary PathWays. Empowering futures.</div>
+        <div class="footer-bottom">&copy; 2019–<span id="year">2026</span> Visionary PathWays. Empowering futures. · Designed by Julie Nakawesi</div>
     </footer>
 
     <script>
